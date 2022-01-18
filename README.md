@@ -104,7 +104,7 @@ Generated a crawler list of 2 messages
 
 ### End-users
 
-If you don't intend on doing any development for the project you you need to run the following
+If you don't intend on doing any development for the project you will need to run the following
 
 ```
 yarn build
