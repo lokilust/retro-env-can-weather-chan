@@ -1,7 +1,8 @@
 # Retrieved from https://dd.weather.gc.ca/citypage_weather/xml/siteList.xml
 
-# If your city is not listed on the main node setup.js [--search town/city] or the observations.js file just add yours to the list
-# After you run setup.js just remove your city from the observations.js file.
+# If your city is not listed on the main node setup.js [--search town/city] or the observations.js file
+# just add yours to the listed on the observations.js file.
+# After you run setup.js and just remove your city from the observations.js file after setup.
 
 const observedCities = [
 {
