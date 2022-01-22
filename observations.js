@@ -21,8 +21,8 @@ const observedCities = [
   { name: "Montreal", stationCode: "QC/s0000635" },
   { name: "Quebec City", stationCode: "QC/s0000620" },
   { name: "Fredericton", stationCode: "NB/s0000250" },
-  { name: "Halifax", stationCode: "NS/s0000318" },
   { name: "St. John's", stationCode: "NL/s0000280" },
+  { name: "Halifax", stationCode: "NS/s0000318" },
 ];
 
 const latestObservations = [];
