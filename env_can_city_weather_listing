@@ -1,0 +1,2571 @@
+# Retrieved from https://dd.weather.gc.ca/citypage_weather/xml/siteList.xml
+
+# If your city is not listed on the main observations.js file just add yours to the list
+# After you run setup.js just remove your city from the observations.js file.
+
+const observedCities = [
+{
+	"name": "Athabasca", "stationCode": "AB/s0000001"
+},
+{
+	"name": "Clearwater", "stationCode": "BC/s0000002"
+},
+{
+	"name": "Valemount", "stationCode": "BC/s0000003"
+},
+{
+	"name": "Grand Forks", "stationCode": "BC/s0000004"
+},
+{
+	"name": "McBride", "stationCode": "BC/s0000005"
+},
+{
+	"name": "Merritt", "stationCode": "BC/s0000006"
+},
+{
+	"name": "Masset", "stationCode": "BC/s0000007"
+},
+{
+	"name": "Invermere", "stationCode": "BC/s0000008"
+},
+{
+	"name": "Dome Creek", "stationCode": "BC/s0000009"
+},observations.js
+{
+	"name": "Little Grand Rapids", "stationCode": "MB/s0000010"
+},
+{
+	"name": "Oxford House", "stationCode": "MB/s0000011"
+},
+{
+	"name": "Bissett", "stationCode": "MB/s0000012"
+},
+{
+	"name": "Shamattawa", "stationCode": "MB/s0000013"
+},
+{
+	"name": "York Factory", "stationCode": "MB/s0000014"
+},
+{
+	"name": "Flin Flon", "stationCode": "MB/s0000015"
+},
+{
+	"name": "Musgrave Harbour", "stationCode": "NL/s0000016"
+},
+{
+	"name": "New-Wes-Valley", "stationCode": "NL/s0000017"
+},
+{
+	"name": "Bay Roberts", "stationCode": "NL/s0000018"
+},
+{
+	"name": "St. Alban's", "stationCode": "NL/s0000019"
+},
+{
+	"name": "Fourchu Head", "stationCode": "NS/s0000020"
+},
+{
+	"name": "North Mountain (Cape Breton)", "stationCode": "NS/s0000021"
+},
+{
+	"name": "Marathon", "stationCode": "ON/s0000022"
+},
+{
+	"name": "Terrace Bay", "stationCode": "ON/s0000023"
+},
+{
+	"name": "Attawapiskat", "stationCode": "ON/s0000024"
+},
+{
+	"name": "Gogama", "stationCode": "ON/s0000025"
+},
+{
+	"name": "Maple Plains", "stationCode": "PE/s0000026"
+},
+{
+	"name": "Murdochville", "stationCode": "QC/s0000027"
+},
+{
+	"name": "Escoumins", "stationCode": "QC/s0000028"
+},
+{
+	"name": "Saint-Michel-des-Saints", "stationCode": "QC/s0000029"
+},
+{
+	"name": "Rancheria", "stationCode": "YT/s0000030"
+},
+{
+	"name": "Dempster (Highway)", "stationCode": "YT/s0000031"
+},
+{
+	"name": "Burgeo", "stationCode": "NL/s0000032"
+},
+{
+	"name": "Bouctouche", "stationCode": "NB/s0000033"
+},
+{
+	"name": "Richibucto", "stationCode": "NB/s0000034"
+},
+{
+	"name": "Rogersville", "stationCode": "NB/s0000035"
+},
+{
+	"name": "Miramichi", "stationCode": "NB/s0000036"
+},
+{
+	"name": "Point Escuminac", "stationCode": "NB/s0000037"
+},
+{
+	"name": "Kouchibouguac", "stationCode": "NB/s0000038"
+},
+{
+	"name": "St. Lawrence", "stationCode": "NL/s0000039"
+},
+{
+	"name": "Parrsboro", "stationCode": "NS/s0000040"
+},
+{
+	"name": "Bonavista", "stationCode": "NL/s0000041"
+},
+{
+	"name": "Wreckhouse", "stationCode": "NL/s0000042"
+},
+{
+	"name": "Edmundston", "stationCode": "NB/s0000043"
+},
+{
+	"name": "Beauharnois", "stationCode": "QC/s0000044"
+},
+{
+	"name": "Edmonton", "stationCode": "AB/s0000045"
+},
+{
+	"name": "Candiac", "stationCode": "QC/s0000046"
+},
+{
+	"name": "Calgary", "stationCode": "AB/s0000047"
+},
+{
+	"name": "La Prairie", "stationCode": "QC/s0000048"
+},
+{
+	"name": "Saint-Constant", "stationCode": "QC/s0000049"
+},
+{
+	"name": "Sainte-Catherine", "stationCode": "QC/s0000050"
+},
+{
+	"name": "Saint-Rémi", "stationCode": "QC/s0000051"
+},
+{
+	"name": "Granby", "stationCode": "QC/s0000052"
+},
+{
+	"name": "Cowansville", "stationCode": "QC/s0000053"
+},
+{
+	"name": "Victoriaville", "stationCode": "QC/s0000054"
+},
+{
+	"name": "Prévost", "stationCode": "QC/s0000055"
+},
+{
+	"name": "Sainte-Sophie", "stationCode": "QC/s0000056"
+},
+{
+	"name": "Saint-Lin-Laurentides", "stationCode": "QC/s0000057"
+},
+{
+	"name": "Saint-Sauveur", "stationCode": "QC/s0000058"
+},
+{
+	"name": "Saint-Hyacinthe", "stationCode": "QC/s0000059"
+},
+{
+	"name": "Marieville", "stationCode": "QC/s0000060"
+},
+{
+	"name": "Rigaud", "stationCode": "QC/s0000061"
+},
+{
+	"name": "Saint-Lazare", "stationCode": "QC/s0000062"
+},
+{
+	"name": "Farnham", "stationCode": "QC/s0000063"
+},
+{
+	"name": "Thetford Mines", "stationCode": "QC/s0000064"
+},
+{
+	"name": "Kugaaruk", "stationCode": "NU/s0000065"
+},
+{
+	"name": "Highvale", "stationCode": "AB/s0000066"
+},
+{
+	"name": "Pelican Narrows", "stationCode": "SK/s0000067"
+},
+{
+	"name": "Strathmore", "stationCode": "AB/s0000068"
+},
+{
+	"name": "Hawkesbury", "stationCode": "ON/s0000069"
+},
+{
+	"name": "Alexandria", "stationCode": "ON/s0000070"
+},
+{
+	"name": "Cornwall", "stationCode": "ON/s0000071"
+},
+{
+	"name": "Morrisburg", "stationCode": "ON/s0000072"
+},
+{
+	"name": "Algonquin Park (Brent)", "stationCode": "ON/s0000073"
+},
+{
+	"name": "Algonquin Park (Lake of Two Rivers)", "stationCode": "ON/s0000074"
+},
+{
+	"name": "Oxtongue Lake", "stationCode": "ON/s0000075"
+},
+{
+	"name": "Welland", "stationCode": "ON/s0000076"
+},
+{
+	"name": "Winchester", "stationCode": "ON/s0000077"
+},
+{
+	"name": "Whistler", "stationCode": "BC/s0000078"
+},
+{
+	"name": "La Scie", "stationCode": "NL/s0000079"
+},
+{
+	"name": "Rondeau (Provincial Park)", "stationCode": "ON/s0000080"
+},
+{
+	"name": "Coronach", "stationCode": "SK/s0000081"
+},
+{
+	"name": "Placentia", "stationCode": "NL/s0000082"
+},
+{
+	"name": "Sundre", "stationCode": "AB/s0000083"
+},
+{
+	"name": "Halifax (Shearwater)", "stationCode": "NS/s0000084"
+},
+{
+	"name": "Témiscamingue", "stationCode": "QC/s0000085"
+},
+{
+	"name": "Indian Head", "stationCode": "SK/s0000086"
+},
+{
+	"name": "Fort Qu'Appelle", "stationCode": "SK/s0000087"
+},
+{
+	"name": "Killarney", "stationCode": "ON/s0000088"
+},
+{
+	"name": "New Glasgow", "stationCode": "NS/s0000089"
+},
+{
+	"name": "Caribou", "stationCode": "NS/s0000090"
+},
+{
+	"name": "Bachelors Island", "stationCode": "MB/s0000091"
+},
+{
+	"name": "Beaverlodge", "stationCode": "AB/s0000092"
+},
+{
+	"name": "Brooks", "stationCode": "AB/s0000093"
+},
+{
+	"name": "Mingan", "stationCode": "QC/s0000094"
+},
+{
+	"name": "Nipawin", "stationCode": "SK/s0000095"
+},
+{
+	"name": "Beaver Island", "stationCode": "NS/s0000096"
+},
+{
+	"name": "Port-Menier", "stationCode": "QC/s0000097"
+},
+{
+	"name": "Salaberry-de-Valleyfield", "stationCode": "QC/s0000098"
+},
+{
+	"name": "Huntingdon", "stationCode": "QC/s0000099"
+},
+{
+	"name": "Cartwright", "stationCode": "NL/s0000100"
+},
+{
+	"name": "Bloodvein", "stationCode": "MB/s0000101"
+},
+{
+	"name": "Berens River", "stationCode": "MB/s0000102"
+},
+{
+	"name": "Atikokan", "stationCode": "ON/s0000103"
+},
+{
+	"name": "Fort Frances", "stationCode": "ON/s0000104"
+},
+{
+	"name": "Mine Centre", "stationCode": "ON/s0000105"
+},
+{
+	"name": "100 Mile House", "stationCode": "BC/s0000106"
+},
+{
+	"name": "Clinton", "stationCode": "BC/s0000107"
+},
+{
+	"name": "Collingwood", "stationCode": "ON/s0000108"
+},
+{
+	"name": "Shelburne", "stationCode": "NS/s0000109"
+},
+{
+	"name": "Baccaro Point", "stationCode": "NS/s0000110"
+},
+{
+	"name": "Coronation", "stationCode": "AB/s0000111"
+},
+{
+	"name": "Englee", "stationCode": "NL/s0000112"
+},
+{
+	"name": "Uranium City", "stationCode": "SK/s0000113"
+},
+{
+	"name": "Port au Choix", "stationCode": "NL/s0000114"
+},
+{
+	"name": "Daniel's Harbour", "stationCode": "NL/s0000115"
+},
+{
+	"name": "Badger", "stationCode": "NL/s0000116"
+},
+{
+	"name": "Buchans", "stationCode": "NL/s0000117"
+},
+{
+	"name": "Grand Falls-Windsor", "stationCode": "NL/s0000118"
+},
+{
+	"name": "Willow Creek (Provincial Park)", "stationCode": "AB/s0000119"
+},
+{
+	"name": "Claresholm", "stationCode": "AB/s0000120"
+},
+{
+	"name": "Chevery", "stationCode": "QC/s0000121"
+},
+{
+	"name": "Twillingate", "stationCode": "NL/s0000122"
+},
+{
+	"name": "Manicouagan", "stationCode": "QC/s0000123"
+},
+{
+	"name": "La Tuque", "stationCode": "QC/s0000124"
+},
+{
+	"name": "Mauricie", "stationCode": "QC/s0000125"
+},
+{
+	"name": "Calgary (Olympic Park)", "stationCode": "AB/s0000126"
+},
+{
+	"name": "Upsala", "stationCode": "ON/s0000127"
+},
+{
+	"name": "St. Anthony", "stationCode": "NL/s0000128"
+},
+{
+	"name": "Drumheller", "stationCode": "AB/s0000129"
+},
+{
+	"name": "Pinawa", "stationCode": "MB/s0000130"
+},
+{
+	"name": "Whiteshell", "stationCode": "MB/s0000131"
+},
+{
+	"name": "Estevan Point", "stationCode": "BC/s0000132"
+},
+{
+	"name": "Shaunavon", "stationCode": "SK/s0000133"
+},
+{
+	"name": "Eastend", "stationCode": "SK/s0000134"
+},
+{
+	"name": "Virden", "stationCode": "MB/s0000135"
+},
+{
+	"name": "Melita", "stationCode": "MB/s0000136"
+},
+{
+	"name": "Turtle Mountain (Provincial Park)", "stationCode": "MB/s0000137"
+},
+{
+	"name": "East Point", "stationCode": "PE/s0000138"
+},
+{
+	"name": "Swan River", "stationCode": "MB/s0000139"
+},
+{
+	"name": "Eureka", "stationCode": "NU/s0000140"
+},
+{
+	"name": "Vancouver", "stationCode": "BC/s0000141"
+},
+{
+	"name": "L'Assomption", "stationCode": "QC/s0000142"
+},
+{
+	"name": "Berthierville", "stationCode": "QC/s0000143"
+},
+{
+	"name": "Contrecoeur", "stationCode": "QC/s0000144"
+},
+{
+	"name": "Mascouche", "stationCode": "QC/s0000145"
+},
+{
+	"name": "Prince George", "stationCode": "BC/s0000146"
+},
+{
+	"name": "Sorel-Tracy", "stationCode": "QC/s0000147"
+},
+{
+	"name": "Tracy", "stationCode": "QC/s0000148"
+},
+{
+	"name": "Le Gardeur", "stationCode": "QC/s0000149"
+},
+{
+	"name": "Morris", "stationCode": "MB/s0000150"
+},
+{
+	"name": "Steinbach", "stationCode": "MB/s0000151"
+},
+{
+	"name": "Dominion City", "stationCode": "MB/s0000152"
+},
+{
+	"name": "Emerson", "stationCode": "MB/s0000153"
+},
+{
+	"name": "Vita", "stationCode": "MB/s0000154"
+},
+{
+	"name": "Gulf Islands (Southern)", "stationCode": "BC/s0000155"
+},
+{
+	"name": "Elk Island (National Park)", "stationCode": "AB/s0000156"
+},
+{
+	"name": "Tisdale", "stationCode": "SK/s0000157"
+},
+{
+	"name": "Melfort", "stationCode": "SK/s0000158"
+},
+{
+	"name": "Cardston", "stationCode": "AB/s0000159"
+},
+{
+	"name": "Snow Lake", "stationCode": "MB/s0000160"
+},
+{
+	"name": "Pukatawagan", "stationCode": "MB/s0000161"
+},
+{
+	"name": "Nain", "stationCode": "NL/s0000162"
+},
+{
+	"name": "Sutton", "stationCode": "QC/s0000163"
+},
+{
+	"name": "Colville Lake", "stationCode": "NT/s0000164"
+},
+{
+	"name": "Goderich", "stationCode": "ON/s0000165"
+},
+{
+	"name": "Kincardine", "stationCode": "ON/s0000166"
+},
+{
+	"name": "Garden Creek", "stationCode": "AB/s0000167"
+},
+{
+	"name": "Brockville", "stationCode": "ON/s0000168"
+},
+{
+	"name": "Gananoque", "stationCode": "ON/s0000169"
+},
+{
+	"name": "Waterton Park", "stationCode": "AB/s0000170"
+},
+{
+	"name": "Altona", "stationCode": "MB/s0000171"
+},
+{
+	"name": "Gretna", "stationCode": "MB/s0000172"
+},
+{
+	"name": "Pemberton", "stationCode": "BC/s0000173"
+},
+{
+	"name": "Îles-de-la-Madeleine", "stationCode": "QC/s0000174"
+},
+{
+	"name": "Sparwood", "stationCode": "BC/s0000175"
+},
+{
+	"name": "Esther", "stationCode": "AB/s0000176"
+},
+{
+	"name": "Grise Fiord", "stationCode": "NU/s0000177"
+},
+{
+	"name": "Hunters Point", "stationCode": "MB/s0000178"
+},
+{
+	"name": "Three Hills", "stationCode": "AB/s0000179"
+},
+{
+	"name": "Varennes", "stationCode": "QC/s0000180"
+},
+{
+	"name": "Hopedale", "stationCode": "NL/s0000181"
+},
+{
+	"name": "Donnacona", "stationCode": "QC/s0000182"
+},
+{
+	"name": "Haines Junction", "stationCode": "YT/s0000183"
+},
+{
+	"name": "Beauceville", "stationCode": "QC/s0000185"
+},
+{
+	"name": "Lac-Mégantic", "stationCode": "QC/s0000186"
+},
+{
+	"name": "Saint-Georges", "stationCode": "QC/s0000187"
+},
+{
+	"name": "Fort Providence", "stationCode": "NT/s0000188"
+},
+{
+	"name": "Pine Falls", "stationCode": "MB/s0000189"
+},
+{
+	"name": "Victoria Beach", "stationCode": "MB/s0000190"
+},
+{
+	"name": "Grand Beach", "stationCode": "MB/s0000191"
+},
+{
+	"name": "Broadview", "stationCode": "SK/s0000192"
+},
+{
+	"name": "Winnipeg", "stationCode": "MB/s0000193"
+},
+{
+	"name": "Charlevoix", "stationCode": "QC/s0000194"
+},
+{
+	"name": "Watrous", "stationCode": "SK/s0000195"
+},
+{
+	"name": "Humboldt", "stationCode": "SK/s0000196"
+},
+{
+	"name": "Alma", "stationCode": "QC/s0000197"
+},
+{
+	"name": "Mount Carleton (Provincial Park)", "stationCode": "NB/s0000198"
+},
+{
+	"name": "Saint-Quentin", "stationCode": "NB/s0000199"
+},
+{
+	"name": "St. Leonard", "stationCode": "NB/s0000200"
+},
+{
+	"name": "Grand Falls", "stationCode": "NB/s0000201"
+},
+{
+	"name": "Saint-Jean-sur-Richelieu", "stationCode": "QC/s0000202"
+},
+{
+	"name": "Saint-Luc", "stationCode": "QC/s0000203"
+},
+{
+	"name": "Vanier", "stationCode": "QC/s0000204"
+},
+{
+	"name": "Bernières", "stationCode": "QC/s0000205"
+},
+{
+	"name": "Ennadai", "stationCode": "NU/s0000206"
+},
+{
+	"name": "Grand Rapids", "stationCode": "MB/s0000207"
+},
+{
+	"name": "Southend Reindeer", "stationCode": "SK/s0000208"
+},
+{
+	"name": "Assiniboia", "stationCode": "SK/s0000209"
+},
+{
+	"name": "Fort Liard", "stationCode": "NT/s0000210"
+},
+{
+	"name": "Saguenay", "stationCode": "QC/s0000211"
+},
+{
+	"name": "Creston", "stationCode": "BC/s0000212"
+},
+{
+	"name": "Mont-Tremblant", "stationCode": "QC/s0000213"
+},
+{
+	"name": "Sainte-Agathe", "stationCode": "QC/s0000214"
+},
+{
+	"name": "Vernon", "stationCode": "BC/s0000216"
+},
+{
+	"name": "Hinton", "stationCode": "AB/s0000217"
+},
+{
+	"name": "Jasper", "stationCode": "AB/s0000218"
+},
+{
+	"name": "Leader", "stationCode": "SK/s0000219"
+},
+{
+	"name": "Marble Mountain", "stationCode": "NL/s0000220"
+},
+{
+	"name": "Corner Brook", "stationCode": "NL/s0000221"
+},
+{
+	"name": "Lillooet", "stationCode": "BC/s0000222"
+},
+{
+	"name": "Kejimkujik (National Park)", "stationCode": "NS/s0000223"
+},
+{
+	"name": "Malahat", "stationCode": "BC/s0000224"
+},
+{
+	"name": "Rockglen", "stationCode": "SK/s0000225"
+},
+{
+	"name": "Hope Slide", "stationCode": "BC/s0000226"
+},
+{
+	"name": "Dease Lake", "stationCode": "BC/s0000227"
+},
+{
+	"name": "Cassiar", "stationCode": "BC/s0000228"
+},
+{
+	"name": "Lac La Biche", "stationCode": "AB/s0000229"
+},
+{
+	"name": "Lucky Lake", "stationCode": "SK/s0000230"
+},
+{
+	"name": "Ogoki", "stationCode": "ON/s0000231"
+},
+{
+	"name": "Webequie", "stationCode": "ON/s0000232"
+},
+{
+	"name": "Lansdowne House", "stationCode": "ON/s0000233"
+},
+{
+	"name": "Gonzales Point", "stationCode": "BC/s0000234"
+},
+{
+	"name": "Wingham", "stationCode": "ON/s0000235"
+},
+{
+	"name": "Walkerton", "stationCode": "ON/s0000236"
+},
+{
+	"name": "Dundalk", "stationCode": "ON/s0000237"
+},
+{
+	"name": "North Perth", "stationCode": "ON/s0000238"
+},
+{
+	"name": "Shelburne", "stationCode": "ON/s0000239"
+},
+{
+	"name": "Mount Forest", "stationCode": "ON/s0000240"
+},
+{
+	"name": "Waskesiu Lake", "stationCode": "SK/s0000241"
+},
+{
+	"name": "Lytton", "stationCode": "BC/s0000242"
+},
+{
+	"name": "Miscou Island", "stationCode": "NB/s0000243"
+},
+{
+	"name": "Maniwaki", "stationCode": "QC/s0000244"
+},
+{
+	"name": "La Vérendrye (Réserve faunique)", "stationCode": "QC/s0000245"
+},
+{
+	"name": "Mont-Laurier", "stationCode": "QC/s0000246"
+},
+{
+	"name": "Pitt Meadows", "stationCode": "BC/s0000247"
+},
+{
+	"name": "Maple Creek", "stationCode": "SK/s0000248"
+},
+{
+	"name": "Whati", "stationCode": "NT/s0000249"
+},
+{
+	"name": "Fredericton", "stationCode": "NB/s0000250"
+},
+{
+	"name": "Cobourg", "stationCode": "ON/s0000251"
+},
+{
+	"name": "North Cape", "stationCode": "PE/s0000252"
+},
+{
+	"name": "Rivière-du-Loup", "stationCode": "QC/s0000253"
+},
+{
+	"name": "Trois-Pistoles", "stationCode": "QC/s0000254"
+},
+{
+	"name": "Temiscouata", "stationCode": "QC/s0000255"
+},
+{
+	"name": "Deerwood", "stationCode": "MB/s0000256"
+},
+{
+	"name": "Carman", "stationCode": "MB/s0000257"
+},
+{
+	"name": "Nelson", "stationCode": "BC/s0000258"
+},
+{
+	"name": "Nakusp", "stationCode": "BC/s0000259"
+},
+{
+	"name": "Nicolet", "stationCode": "QC/s0000260"
+},
+{
+	"name": "Drummondville", "stationCode": "QC/s0000261"
+},
+{
+	"name": "Saint-Nicéphore", "stationCode": "QC/s0000262"
+},
+{
+	"name": "Kananaskis (Nakiska Ridgetop)", "stationCode": "AB/s0000263"
+},
+{
+	"name": "North East Margaree", "stationCode": "NS/s0000264"
+},
+{
+	"name": "Baddeck", "stationCode": "NS/s0000265"
+},
+{
+	"name": "Hearst", "stationCode": "ON/s0000266"
+},
+{
+	"name": "Hornepayne", "stationCode": "ON/s0000267"
+},
+{
+	"name": "New Carlisle", "stationCode": "QC/s0000268"
+},
+{
+	"name": "Bonaventure", "stationCode": "QC/s0000269"
+},
+{
+	"name": "Dolbeau-Mistassini", "stationCode": "QC/s0000270"
+},
+{
+	"name": "Onefour", "stationCode": "AB/s0000272"
+},
+{
+	"name": "Oak Point", "stationCode": "MB/s0000273"
+},
+{
+	"name": "Elbow", "stationCode": "SK/s0000274"
+},
+{
+	"name": "Dawson", "stationCode": "YT/s0000275"
+},
+{
+	"name": "McCreary", "stationCode": "MB/s0000276"
+},
+{
+	"name": "Breton", "stationCode": "AB/s0000277"
+},
+{
+	"name": "Wynyard", "stationCode": "SK/s0000278"
+},
+{
+	"name": "Hendrickson Creek", "stationCode": "AB/s0000279"
+},
+{
+	"name": "St. John's", "stationCode": "NL/s0000280"
+},
+{
+	"name": "Midland", "stationCode": "ON/s0000281"
+},
+{
+	"name": "Fort Erie", "stationCode": "ON/s0000282"
+},
+{
+	"name": "Port Colborne", "stationCode": "ON/s0000283"
+},
+{
+	"name": "Laurentides (Réserve faunique)", "stationCode": "QC/s0000284"
+},
+{
+	"name": "Point Lepreau", "stationCode": "NB/s0000285"
+},
+{
+	"name": "Esquimalt", "stationCode": "BC/s0000286"
+},
+{
+	"name": "Parent", "stationCode": "QC/s0000287"
+},
+{
+	"name": "Gouin (Réservoir)", "stationCode": "QC/s0000288"
+},
+{
+	"name": "Pilot Mound", "stationCode": "MB/s0000289"
+},
+{
+	"name": "Terrebonne", "stationCode": "QC/s0000290"
+},
+{
+	"name": "Princeton", "stationCode": "BC/s0000291"
+},
+{
+	"name": "Puntzi Mountain", "stationCode": "BC/s0000292"
+},
+{
+	"name": "Burns Lake", "stationCode": "BC/s0000293"
+},
+{
+	"name": "Port Alberni", "stationCode": "BC/s0000294"
+},
+{
+	"name": "Tadoussac", "stationCode": "QC/s0000295"
+},
+{
+	"name": "Coaticook", "stationCode": "QC/s0000296"
+},
+{
+	"name": "Lacombe", "stationCode": "AB/s0000297"
+},
+{
+	"name": "Cape Race", "stationCode": "NL/s0000298"
+},
+{
+	"name": "Red Earth Creek", "stationCode": "AB/s0000299"
+},
+{
+	"name": "Rosetown", "stationCode": "SK/s0000300"
+},
+{
+	"name": "Bancroft", "stationCode": "ON/s0000301"
+},
+{
+	"name": "Barry's Bay", "stationCode": "ON/s0000302"
+},
+{
+	"name": "Haliburton", "stationCode": "ON/s0000303"
+},
+{
+	"name": "Apsley", "stationCode": "ON/s0000304"
+},
+{
+	"name": "Kaladar", "stationCode": "ON/s0000305"
+},
+{
+	"name": "Rocky Mountain House", "stationCode": "AB/s0000306"
+},
+{
+	"name": "St. Peter's", "stationCode": "NS/s0000307"
+},
+{
+	"name": "Hart Island", "stationCode": "NS/s0000308"
+},
+{
+	"name": "Rock River", "stationCode": "YT/s0000309"
+},
+{
+	"name": "Crowsnest", "stationCode": "AB/s0000310"
+},
+{
+	"name": "Camrose", "stationCode": "AB/s0000311"
+},
+{
+	"name": "Wetaskiwin", "stationCode": "AB/s0000312"
+},
+{
+	"name": "Milk River", "stationCode": "AB/s0000313"
+},
+{
+	"name": "Percé", "stationCode": "QC/s0000314"
+},
+{
+	"name": "Chandler", "stationCode": "QC/s0000315"
+},
+{
+	"name": "Gibsons", "stationCode": "BC/s0000316"
+},
+{
+	"name": "Sechelt", "stationCode": "BC/s0000317"
+},
+{
+	"name": "Halifax", "stationCode": "NS/s0000318"
+},
+{
+	"name": "Grande-Vallée", "stationCode": "QC/s0000319"
+},
+{
+	"name": "Cap Chat", "stationCode": "QC/s0000320"
+},
+{
+	"name": "Gaspésie (Parc national)", "stationCode": "QC/s0000321"
+},
+{
+	"name": "Sainte-Anne-Des-Monts", "stationCode": "QC/s0000322"
+},
+{
+	"name": "Squamish", "stationCode": "BC/s0000323"
+},
+{
+	"name": "Salmon Arm", "stationCode": "BC/s0000324"
+},
+{
+	"name": "Stratford", "stationCode": "ON/s0000325"
+},
+{
+	"name": "London", "stationCode": "ON/s0000326"
+},
+{
+	"name": "Woodstock", "stationCode": "ON/s0000327"
+},
+{
+	"name": "Strathroy", "stationCode": "ON/s0000328"
+},
+{
+	"name": "St. Thomas", "stationCode": "ON/s0000329"
+},
+{
+	"name": "Spiritwood", "stationCode": "SK/s0000330"
+},
+{
+	"name": "Saint Andrews", "stationCode": "NB/s0000331"
+},
+{
+	"name": "St. Stephen", "stationCode": "NB/s0000332"
+},
+{
+	"name": "La Malbaie", "stationCode": "QC/s0000333"
+},
+{
+	"name": "Montmagny", "stationCode": "QC/s0000334"
+},
+{
+	"name": "Kamouraska", "stationCode": "QC/s0000335"
+},
+{
+	"name": "L'Islet", "stationCode": "QC/s0000336"
+},
+{
+	"name": "Sprague", "stationCode": "MB/s0000337"
+},
+{
+	"name": "Sachs Harbour", "stationCode": "NT/s0000338"
+},
+{
+	"name": "Fisher Branch", "stationCode": "MB/s0000339"
+},
+{
+	"name": "Sambaa K'e", "stationCode": "NT/s0000340"
+},
+{
+	"name": "Tetsa River (Provincial Park)", "stationCode": "BC/s0000341"
+},
+{
+	"name": "Baie-Saint-Paul", "stationCode": "QC/s0000342"
+},
+{
+	"name": "Biggar", "stationCode": "SK/s0000343"
+},
+{
+	"name": "Scott", "stationCode": "SK/s0000344"
+},
+{
+	"name": "Magog", "stationCode": "QC/s0000345"
+},
+{
+	"name": "Trois-Rivières", "stationCode": "QC/s0000346"
+},
+{
+	"name": "Bécancour", "stationCode": "QC/s0000347"
+},
+{
+	"name": "Louiseville", "stationCode": "QC/s0000348"
+},
+{
+	"name": "Faro", "stationCode": "YT/s0000349"
+},
+{
+	"name": "Ross River", "stationCode": "YT/s0000350"
+},
+{
+	"name": "Summerland", "stationCode": "BC/s0000351"
+},
+{
+	"name": "Shoal Lake", "stationCode": "MB/s0000352"
+},
+{
+	"name": "Rouyn-Noranda", "stationCode": "QC/s0000353"
+},
+{
+	"name": "La Sarre", "stationCode": "QC/s0000354"
+},
+{
+	"name": "Swift Current", "stationCode": "SK/s0000355"
+},
+{
+	"name": "Vegreville", "stationCode": "AB/s0000356"
+},
+{
+	"name": "Val Marie", "stationCode": "SK/s0000357"
+},
+{
+	"name": "Vauxhall", "stationCode": "AB/s0000358"
+},
+{
+	"name": "Taber", "stationCode": "AB/s0000359"
+},
+{
+	"name": "Cypress Hills (Provincial Park)", "stationCode": "SK/s0000360"
+},
+{
+	"name": "Deux-Montagnes", "stationCode": "QC/s0000361"
+},
+{
+	"name": "Vaudreuil-Dorion", "stationCode": "QC/s0000362"
+},
+{
+	"name": "Pincourt", "stationCode": "QC/s0000363"
+},
+{
+	"name": "Digby", "stationCode": "NS/s0000364"
+},
+{
+	"name": "Brier Island", "stationCode": "NS/s0000365"
+},
+{
+	"name": "Yellowknife", "stationCode": "NT/s0000366"
+},
+{
+	"name": "Oakville", "stationCode": "ON/s0000367"
+},
+{
+	"name": "Burlington", "stationCode": "ON/s0000368"
+},
+{
+	"name": "Collins Bay", "stationCode": "SK/s0000369"
+},
+{
+	"name": "Western Head", "stationCode": "NS/s0000370"
+},
+{
+	"name": "Liverpool", "stationCode": "NS/s0000371"
+},
+{
+	"name": "Weyburn", "stationCode": "SK/s0000372"
+},
+{
+	"name": "White Rock", "stationCode": "BC/s0000373"
+},
+{
+	"name": "Peawanuck", "stationCode": "ON/s0000374"
+},
+{
+	"name": "Wasagaming", "stationCode": "MB/s0000375"
+},
+{
+	"name": "Muncho Lake", "stationCode": "BC/s0000376"
+},
+{
+	"name": "Liard River", "stationCode": "BC/s0000377"
+},
+{
+	"name": "Poplar River", "stationCode": "MB/s0000378"
+},
+{
+	"name": "Bow Valley (Provincial Park)", "stationCode": "AB/s0000379"
+},
+{
+	"name": "Roblin", "stationCode": "MB/s0000380"
+},
+{
+	"name": "Last Mountain Lake (Sanctuary)", "stationCode": "SK/s0000381"
+},
+{
+	"name": "Bow Island", "stationCode": "AB/s0000382"
+},
+{
+	"name": "High River", "stationCode": "AB/s0000383"
+},
+{
+	"name": "Stavely", "stationCode": "AB/s0000384"
+},
+{
+	"name": "Tracadie-Sheila", "stationCode": "NB/s0000385"
+},
+{
+	"name": "Bas-Caraquet", "stationCode": "NB/s0000386"
+},
+{
+	"name": "Outlook", "stationCode": "SK/s0000387"
+},
+{
+	"name": "Gameti", "stationCode": "NT/s0000388"
+},
+{
+	"name": "Indin River", "stationCode": "NT/s0000389"
+},
+{
+	"name": "Victoria (University of)", "stationCode": "BC/s0000390"
+},
+{
+	"name": "Kootenay (National Park)", "stationCode": "BC/s0000391"
+},
+{
+	"name": "Yoho (National Park)", "stationCode": "BC/s0000392"
+},
+{
+	"name": "Rimouski", "stationCode": "QC/s0000393"
+},
+{
+	"name": "Iqaluit", "stationCode": "NU/s0000394"
+},
+{
+	"name": "Gull Bay", "stationCode": "ON/s0000395"
+},
+{
+	"name": "Rock Creek", "stationCode": "BC/s0000396"
+},
+{
+	"name": "Osoyoos", "stationCode": "BC/s0000397"
+},
+{
+	"name": "Chilliwack", "stationCode": "BC/s0000398"
+},
+{
+	"name": "Agassiz", "stationCode": "BC/s0000399"
+},
+{
+	"name": "Channel-Port aux Basques", "stationCode": "NL/s0000400"
+},
+{
+	"name": "Carberry", "stationCode": "MB/s0000401"
+},
+{
+	"name": "Shilo", "stationCode": "MB/s0000402"
+},
+{
+	"name": "Canmore", "stationCode": "AB/s0000403"
+},
+{
+	"name": "Banff", "stationCode": "AB/s0000404"
+},
+{
+	"name": "Grand Étang", "stationCode": "NS/s0000405"
+},
+{
+	"name": "Amqui", "stationCode": "QC/s0000406"
+},
+{
+	"name": "Matapedia", "stationCode": "QC/s0000407"
+},
+{
+	"name": "Vallée de la Matapédia", "stationCode": "QC/s0000408"
+},
+{
+	"name": "Atlin", "stationCode": "BC/s0000409"
+},
+{
+	"name": "Teslin", "stationCode": "YT/s0000410"
+},
+{
+	"name": "Thunder Bay", "stationCode": "ON/s0000411"
+},
+{
+	"name": "Arctic Bay", "stationCode": "NU/s0000412"
+},
+{
+	"name": "Barrhead", "stationCode": "AB/s0000413"
+},
+{
+	"name": "Orillia", "stationCode": "ON/s0000414"
+},
+{
+	"name": "Barrie", "stationCode": "ON/s0000415"
+},
+{
+	"name": "Lévis", "stationCode": "QC/s0000416"
+},
+{
+	"name": "Tadoule Lake", "stationCode": "MB/s0000417"
+},
+{
+	"name": "Greenstone (Beardmore)", "stationCode": "ON/s0000418"
+},
+{
+	"name": "Nipigon", "stationCode": "ON/s0000419"
+},
+{
+	"name": "Chéticamp", "stationCode": "NS/s0000420"
+},
+{
+	"name": "Carmacks", "stationCode": "YT/s0000421"
+},
+{
+	"name": "Tobermory", "stationCode": "ON/s0000422"
+},
+{
+	"name": "Deline", "stationCode": "NT/s0000423"
+},
+{
+	"name": "Simcoe", "stationCode": "ON/s0000424"
+},
+{
+	"name": "Tillsonburg", "stationCode": "ON/s0000425"
+},
+{
+	"name": "Norfolk", "stationCode": "ON/s0000426"
+},
+{
+	"name": "Westlock", "stationCode": "AB/s0000427"
+},
+{
+	"name": "Ear Falls", "stationCode": "ON/s0000428"
+},
+{
+	"name": "New Tecumseth", "stationCode": "ON/s0000429"
+},
+{
+	"name": "Ottawa (Kanata - Orléans)", "stationCode": "ON/s0000430"
+},
+{
+	"name": "Leamington", "stationCode": "ON/s0000431"
+},
+{
+	"name": "Ulukhaktok", "stationCode": "NT/s0000432"
+},
+{
+	"name": "Ingonish", "stationCode": "NS/s0000433"
+},
+{
+	"name": "Smiths Falls", "stationCode": "ON/s0000434"
+},
+{
+	"name": "Sharbot Lake", "stationCode": "ON/s0000435"
+},
+{
+	"name": "Kemptville", "stationCode": "ON/s0000436"
+},
+{
+	"name": "Kirkland Lake", "stationCode": "ON/s0000437"
+},
+{
+	"name": "Windsor", "stationCode": "NS/s0000438"
+},
+{
+	"name": "Kentville", "stationCode": "NS/s0000439"
+},
+{
+	"name": "Lunenburg", "stationCode": "NS/s0000440"
+},
+{
+	"name": "Bridgewater", "stationCode": "NS/s0000441"
+},
+{
+	"name": "Wekweeti", "stationCode": "NT/s0000442"
+},
+{
+	"name": "Lutselke", "stationCode": "NT/s0000443"
+},
+{
+	"name": "Morden", "stationCode": "MB/s0000444"
+},
+{
+	"name": "Winkler", "stationCode": "MB/s0000445"
+},
+{
+	"name": "Sheet Harbour", "stationCode": "NS/s0000446"
+},
+{
+	"name": "Malay Falls", "stationCode": "NS/s0000447"
+},
+{
+	"name": "Nordegg", "stationCode": "AB/s0000448"
+},
+{
+	"name": "Sackville", "stationCode": "NB/s0000449"
+},
+{
+	"name": "Amherst", "stationCode": "NS/s0000450"
+},
+{
+	"name": "Parry Sound", "stationCode": "ON/s0000451"
+},
+{
+	"name": "Dunchurch", "stationCode": "ON/s0000452"
+},
+{
+	"name": "Stony Plain", "stationCode": "AB/s0000453"
+},
+{
+	"name": "Chatham-Kent", "stationCode": "ON/s0000454"
+},
+{
+	"name": "Rodney", "stationCode": "ON/s0000455"
+},
+{
+	"name": "Rocky Harbour", "stationCode": "NL/s0000456"
+},
+{
+	"name": "Gros Morne", "stationCode": "NL/s0000457"
+},
+{
+	"name": "Toronto", "stationCode": "ON/s0000458"
+},
+{
+	"name": "Lanaudière", "stationCode": "QC/s0000459"
+},
+{
+	"name": "Port Hawkesbury", "stationCode": "NS/s0000460"
+},
+{
+	"name": "Tracadie", "stationCode": "NS/s0000461"
+},
+{
+	"name": "Antigonish", "stationCode": "NS/s0000462"
+},
+{
+	"name": "Cape George", "stationCode": "NS/s0000463"
+},
+{
+	"name": "Guysborough", "stationCode": "NS/s0000464"
+},
+{
+	"name": "Tatlayoko Lake", "stationCode": "BC/s0000465"
+},
+{
+	"name": "Clarenville", "stationCode": "NL/s0000466"
+},
+{
+	"name": "Terra Nova (National Park)", "stationCode": "NL/s0000467"
+},
+{
+	"name": "Drayton Valley", "stationCode": "AB/s0000468"
+},
+{
+	"name": "Vineland", "stationCode": "ON/s0000469"
+},
+{
+	"name": "Lincoln", "stationCode": "ON/s0000470"
+},
+{
+	"name": "Trail", "stationCode": "BC/s0000471"
+},
+{
+	"name": "Winnipeg (The Forks)", "stationCode": "MB/s0000472"
+},
+{
+	"name": "Winterland", "stationCode": "NL/s0000473"
+},
+{
+	"name": "Marystown", "stationCode": "NL/s0000474"
+},
+{
+	"name": "Grand Bank", "stationCode": "NL/s0000475"
+},
+{
+	"name": "Nahanni Butte", "stationCode": "NT/s0000476"
+},
+{
+	"name": "Whitecourt", "stationCode": "AB/s0000477"
+},
+{
+	"name": "La Grande-Quatre", "stationCode": "QC/s0000478"
+},
+{
+	"name": "Sault Ste. Marie", "stationCode": "ON/s0000479"
+},
+{
+	"name": "Kangirsuk", "stationCode": "QC/s0000480"
+},
+{
+	"name": "Tofino", "stationCode": "BC/s0000481"
+},
+{
+	"name": "Ucluelet", "stationCode": "BC/s0000482"
+},
+{
+	"name": "Baie-Comeau", "stationCode": "QC/s0000483"
+},
+{
+	"name": "Forestville", "stationCode": "QC/s0000484"
+},
+{
+	"name": "Bella Coola", "stationCode": "BC/s0000485"
+},
+{
+	"name": "Bagotville", "stationCode": "QC/s0000486"
+},
+{
+	"name": "Baker Lake", "stationCode": "NU/s0000487"
+},
+{
+	"name": "Campbell River", "stationCode": "BC/s0000488"
+},
+{
+	"name": "Alliston", "stationCode": "ON/s0000489"
+},
+{
+	"name": "Minnedosa", "stationCode": "MB/s0000490"
+},
+{
+	"name": "Souris", "stationCode": "MB/s0000491"
+},
+{
+	"name": "Brandon", "stationCode": "MB/s0000492"
+},
+{
+	"name": "Cochrane", "stationCode": "AB/s0000493"
+},
+{
+	"name": "Blanc-Sablon", "stationCode": "QC/s0000494"
+},
+{
+	"name": "Cambridge Bay", "stationCode": "NU/s0000495"
+},
+{
+	"name": "Nanaimo", "stationCode": "BC/s0000496"
+},
+{
+	"name": "Castlegar", "stationCode": "BC/s0000497"
+},
+{
+	"name": "Kugluktuk", "stationCode": "NU/s0000498"
+},
+{
+	"name": "Blue River", "stationCode": "BC/s0000499"
+},
+{
+	"name": "Chetwynd", "stationCode": "BC/s0000500"
+},
+{
+	"name": "Chesterfield", "stationCode": "NU/s0000501"
+},
+{
+	"name": "Chipman", "stationCode": "NB/s0000502"
+},
+{
+	"name": "Doaktown", "stationCode": "NB/s0000503"
+},
+{
+	"name": "Clyde River", "stationCode": "NU/s0000504"
+},
+{
+	"name": "Kluane Lake", "stationCode": "YT/s0000505"
+},
+{
+	"name": "Burwash Landing", "stationCode": "YT/s0000506"
+},
+{
+	"name": "Deer Lake", "stationCode": "NL/s0000507"
+},
+{
+	"name": "Dauphin", "stationCode": "MB/s0000508"
+},
+{
+	"name": "Dawson Creek", "stationCode": "BC/s0000509"
+},
+{
+	"name": "Edmonton (Int'l Aprt)", "stationCode": "AB/s0000510"
+},
+{
+	"name": "Arviat", "stationCode": "NU/s0000511"
+},
+{
+	"name": "Elliot Lake", "stationCode": "ON/s0000512"
+},
+{
+	"name": "Blind River", "stationCode": "ON/s0000513"
+},
+{
+	"name": "Oxbow", "stationCode": "SK/s0000514"
+},
+{
+	"name": "Carlyle", "stationCode": "SK/s0000515"
+},
+{
+	"name": "Estevan", "stationCode": "SK/s0000516"
+},
+{
+	"name": "Fort Severn", "stationCode": "ON/s0000517"
+},
+{
+	"name": "Edson", "stationCode": "AB/s0000518"
+},
+{
+	"name": "Inuvik", "stationCode": "NT/s0000519"
+},
+{
+	"name": "Armstrong", "stationCode": "ON/s0000520"
+},
+{
+	"name": "Oromocto", "stationCode": "NB/s0000521"
+},
+{
+	"name": "Woodstock", "stationCode": "NB/s0000522"
+},
+{
+	"name": "Mildred Lake", "stationCode": "AB/s0000523"
+},
+{
+	"name": "Fort Resolution", "stationCode": "NT/s0000524"
+},
+{
+	"name": "Fort Simpson", "stationCode": "NT/s0000525"
+},
+{
+	"name": "Makkovik", "stationCode": "NL/s0000526"
+},
+{
+	"name": "Golden", "stationCode": "BC/s0000527"
+},
+{
+	"name": "Greater Napanee", "stationCode": "ON/s0000528"
+},
+{
+	"name": "Sydenham", "stationCode": "ON/s0000529"
+},
+{
+	"name": "Westport", "stationCode": "ON/s0000530"
+},
+{
+	"name": "Kingston", "stationCode": "ON/s0000531"
+},
+{
+	"name": "La Grande Rivière", "stationCode": "QC/s0000532"
+},
+{
+	"name": "Arnes", "stationCode": "MB/s0000533"
+},
+{
+	"name": "Gimli", "stationCode": "MB/s0000534"
+},
+{
+	"name": "Gaspé", "stationCode": "QC/s0000535"
+},
+{
+	"name": "Forillon", "stationCode": "QC/s0000536"
+},
+{
+	"name": "Forillon (National Park)", "stationCode": "QC/s0000537"
+},
+{
+	"name": "Greenstone (Geraldton)", "stationCode": "ON/s0000538"
+},
+{
+	"name": "Greenstone (Nakina)", "stationCode": "ON/s0000539"
+},
+{
+	"name": "Igloolik", "stationCode": "NU/s0000540"
+},
+{
+	"name": "Havre St-Pierre", "stationCode": "QC/s0000541"
+},
+{
+	"name": "Kuujjuarapik", "stationCode": "QC/s0000542"
+},
+{
+	"name": "Gillam", "stationCode": "MB/s0000543"
+},
+{
+	"name": "Quaqtaq", "stationCode": "QC/s0000544"
+},
+{
+	"name": "Hudson Bay", "stationCode": "SK/s0000545"
+},
+{
+	"name": "Dryden", "stationCode": "ON/s0000546"
+},
+{
+	"name": "Hope", "stationCode": "BC/s0000547"
+},
+{
+	"name": "Haldimand County", "stationCode": "ON/s0000548"
+},
+{
+	"name": "Hamilton", "stationCode": "ON/s0000549"
+},
+{
+	"name": "Brantford", "stationCode": "ON/s0000550"
+},
+{
+	"name": "Longueuil", "stationCode": "QC/s0000551"
+},
+{
+	"name": "Richelieu", "stationCode": "QC/s0000552"
+},
+{
+	"name": "Carignan", "stationCode": "QC/s0000553"
+},
+{
+	"name": "Chambly", "stationCode": "QC/s0000554"
+},
+{
+	"name": "Mont Saint-Hilaire", "stationCode": "QC/s0000555"
+},
+{
+	"name": "Otterburn Park", "stationCode": "QC/s0000556"
+},
+{
+	"name": "Saint-Amable", "stationCode": "QC/s0000557"
+},
+{
+	"name": "Saint-Basile Le Grand", "stationCode": "QC/s0000558"
+},
+{
+	"name": "Sainte-Julie", "stationCode": "QC/s0000559"
+},
+{
+	"name": "Enterprise", "stationCode": "NT/s0000560"
+},
+{
+	"name": "Hay River", "stationCode": "NT/s0000561"
+},
+{
+	"name": "Summerside", "stationCode": "PE/s0000562"
+},
+{
+	"name": "Ivujivik", "stationCode": "QC/s0000563"
+},
+{
+	"name": "Pond Inlet", "stationCode": "NU/s0000564"
+},
+{
+	"name": "Island Lake", "stationCode": "MB/s0000565"
+},
+{
+	"name": "Gods Lake", "stationCode": "MB/s0000566"
+},
+{
+	"name": "Stephenville", "stationCode": "NL/s0000567"
+},
+{
+	"name": "Kamloops", "stationCode": "BC/s0000568"
+},
+{
+	"name": "Cache Creek", "stationCode": "BC/s0000569"
+},
+{
+	"name": "Aklavik", "stationCode": "NT/s0000570"
+},
+{
+	"name": "Guelph", "stationCode": "ON/s0000571"
+},
+{
+	"name": "Cambridge", "stationCode": "ON/s0000572"
+},
+{
+	"name": "Kitchener-Waterloo", "stationCode": "ON/s0000573"
+},
+{
+	"name": "Kangiqsujuaq", "stationCode": "QC/s0000574"
+},
+{
+	"name": "Lac Raglan", "stationCode": "QC/s0000575"
+},
+{
+	"name": "Key Lake", "stationCode": "SK/s0000576"
+},
+{
+	"name": "Schefferville", "stationCode": "QC/s0000577"
+},
+{
+	"name": "Akulivik", "stationCode": "QC/s0000578"
+},
+{
+	"name": "Waskaganish", "stationCode": "QC/s0000579"
+},
+{
+	"name": "Baie-James", "stationCode": "QC/s0000580"
+},
+{
+	"name": "Kindersley", "stationCode": "SK/s0000581"
+},
+{
+	"name": "Newmarket", "stationCode": "ON/s0000582"
+},
+{
+	"name": "Charlottetown", "stationCode": "PE/s0000583"
+},
+{
+	"name": "Vaughan", "stationCode": "ON/s0000584"
+},
+{
+	"name": "Markham", "stationCode": "ON/s0000585"
+},
+{
+	"name": "Aupaluk", "stationCode": "QC/s0000586"
+},
+{
+	"name": "Kimmirut", "stationCode": "NU/s0000587"
+},
+{
+	"name": "Chapleau", "stationCode": "ON/s0000588"
+},
+{
+	"name": "Meadow Lake", "stationCode": "SK/s0000589"
+},
+{
+	"name": "Lloydminster", "stationCode": "AB/s0000590"
+},
+{
+	"name": "Kangiqsualujjuaq", "stationCode": "QC/s0000591"
+},
+{
+	"name": "Kelowna", "stationCode": "BC/s0000592"
+},
+{
+	"name": "Mayo", "stationCode": "YT/s0000593"
+},
+{
+	"name": "Mary's Harbour", "stationCode": "NL/s0000594"
+},
+{
+	"name": "Fort McMurray", "stationCode": "AB/s0000595"
+},
+{
+	"name": "Moosonee", "stationCode": "ON/s0000596"
+},
+{
+	"name": "Fort Albany", "stationCode": "ON/s0000597"
+},
+{
+	"name": "Chibougamau", "stationCode": "QC/s0000598"
+},
+{
+	"name": "Umiujaq", "stationCode": "QC/s0000599"
+},
+{
+	"name": "Mirabel", "stationCode": "QC/s0000600"
+},
+{
+	"name": "Saint-Jérôme", "stationCode": "QC/s0000601"
+},
+{
+	"name": "Lachute", "stationCode": "QC/s0000602"
+},
+{
+	"name": "Blainville", "stationCode": "QC/s0000603"
+},
+{
+	"name": "Boisbriand", "stationCode": "QC/s0000604"
+},
+{
+	"name": "Lorraine", "stationCode": "QC/s0000605"
+},
+{
+	"name": "Rosemère", "stationCode": "QC/s0000606"
+},
+{
+	"name": "Sainte-Anne-Des-Plaines", "stationCode": "QC/s0000607"
+},
+{
+	"name": "Sainte-Thérèse", "stationCode": "QC/s0000608"
+},
+{
+	"name": "Saint-Eustache", "stationCode": "QC/s0000609"
+},
+{
+	"name": "Natashquan", "stationCode": "QC/s0000610"
+},
+{
+	"name": "Gatineau", "stationCode": "QC/s0000611"
+},
+{
+	"name": "Papineau", "stationCode": "QC/s0000612"
+},
+{
+	"name": "Pontiac", "stationCode": "QC/s0000613"
+},
+{
+	"name": "Val-des-Monts", "stationCode": "QC/s0000614"
+},
+{
+	"name": "Chelsea", "stationCode": "QC/s0000615"
+},
+{
+	"name": "Norway House", "stationCode": "MB/s0000616"
+},
+{
+	"name": "Matagami", "stationCode": "QC/s0000617"
+},
+{
+	"name": "Ekati (Lac de Gras)", "stationCode": "NT/s0000618"
+},
+{
+	"name": "Cold Lake", "stationCode": "AB/s0000619"
+},
+{
+	"name": "Québec", "stationCode": "QC/s0000620"
+},
+{
+	"name": "High Level", "stationCode": "AB/s0000621"
+},
+{
+	"name": "Grand Manan", "stationCode": "NB/s0000622"
+},
+{
+	"name": "Ottawa (Richmond - Metcalfe)", "stationCode": "ON/s0000623"
+},
+{
+	"name": "Prince Albert", "stationCode": "SK/s0000624"
+},
+{
+	"name": "Peace River", "stationCode": "AB/s0000625"
+},
+{
+	"name": "Portage la Prairie", "stationCode": "MB/s0000626"
+},
+{
+	"name": "Inukjuak", "stationCode": "QC/s0000627"
+},
+{
+	"name": "Pickle Lake", "stationCode": "ON/s0000628"
+},
+{
+	"name": "Peterborough", "stationCode": "ON/s0000629"
+},
+{
+	"name": "Port Perry", "stationCode": "ON/s0000630"
+},
+{
+	"name": "Kawartha Lakes (Lindsay)", "stationCode": "ON/s0000631"
+},
+{
+	"name": "Kawartha Lakes (Fenelon Falls)", "stationCode": "ON/s0000632"
+},
+{
+	"name": "Prince Rupert", "stationCode": "BC/s0000633"
+},
+{
+	"name": "Powell River", "stationCode": "BC/s0000634"
+},
+{
+	"name": "Montréal", "stationCode": "QC/s0000635"
+},
+{
+	"name": "Fort Chipewyan", "stationCode": "AB/s0000636"
+},
+{
+	"name": "Burk's Falls", "stationCode": "ON/s0000637"
+},
+{
+	"name": "Gravenhurst", "stationCode": "ON/s0000638"
+},
+{
+	"name": "Port Carling", "stationCode": "ON/s0000639"
+},
+{
+	"name": "Huntsville", "stationCode": "ON/s0000640"
+},
+{
+	"name": "Bracebridge", "stationCode": "ON/s0000641"
+},
+{
+	"name": "Muskoka", "stationCode": "ON/s0000642"
+},
+{
+	"name": "Rainbow Lake", "stationCode": "AB/s0000643"
+},
+{
+	"name": "The Pas", "stationCode": "MB/s0000644"
+},
+{
+	"name": "Red Deer", "stationCode": "AB/s0000645"
+},
+{
+	"name": "Windsor", "stationCode": "ON/s0000646"
+},
+{
+	"name": "Good Hope Lake", "stationCode": "BC/s0000647"
+},
+{
+	"name": "Watson Lake", "stationCode": "YT/s0000648"
+},
+{
+	"name": "Yarmouth", "stationCode": "NS/s0000649"
+},
+{
+	"name": "Sioux Narrows", "stationCode": "ON/s0000650"
+},
+{
+	"name": "Kenora", "stationCode": "ON/s0000651"
+},
+{
+	"name": "Lethbridge", "stationCode": "AB/s0000652"
+},
+{
+	"name": "Shediac", "stationCode": "NB/s0000653"
+},
+{
+	"name": "Moncton", "stationCode": "NB/s0000654"
+},
+{
+	"name": "Hopewell", "stationCode": "NB/s0000655"
+},
+{
+	"name": "Comox", "stationCode": "BC/s0000656"
+},
+{
+	"name": "Courtenay", "stationCode": "BC/s0000657"
+},
+{
+	"name": "Brampton", "stationCode": "ON/s0000658"
+},
+{
+	"name": "Kakabeka Falls", "stationCode": "ON/s0000659"
+},
+{
+	"name": "Dorion", "stationCode": "ON/s0000660"
+},
+{
+	"name": "Grande Prairie", "stationCode": "AB/s0000661"
+},
+{
+	"name": "Canora", "stationCode": "SK/s0000662"
+},
+{
+	"name": "Yorkton", "stationCode": "SK/s0000663"
+},
+{
+	"name": "Kamsack", "stationCode": "SK/s0000664"
+},
+{
+	"name": "Melville", "stationCode": "SK/s0000665"
+},
+{
+	"name": "North Battleford", "stationCode": "SK/s0000666"
+},
+{
+	"name": "Gander", "stationCode": "NL/s0000667"
+},
+{
+	"name": "Campbellton", "stationCode": "NL/s0000668"
+},
+{
+	"name": "Lewisporte", "stationCode": "NL/s0000669"
+},
+{
+	"name": "Sydney", "stationCode": "NS/s0000670"
+},
+{
+	"name": "Quesnel", "stationCode": "BC/s0000671"
+},
+{
+	"name": "Resolute", "stationCode": "NU/s0000672"
+},
+{
+	"name": "Roberval", "stationCode": "QC/s0000673"
+},
+{
+	"name": "Lac-Saint-Jean", "stationCode": "QC/s0000674"
+},
+{
+	"name": "Saint-Félicien", "stationCode": "QC/s0000675"
+},
+{
+	"name": "Red Lake", "stationCode": "ON/s0000676"
+},
+{
+	"name": "Pikangikum", "stationCode": "ON/s0000677"
+},
+{
+	"name": "Rankin Inlet", "stationCode": "NU/s0000678"
+},
+{
+	"name": "Revelstoke", "stationCode": "BC/s0000679"
+},
+{
+	"name": "Greater Sudbury", "stationCode": "ON/s0000680"
+},
+{
+	"name": "Sherbrooke", "stationCode": "QC/s0000681"
+},
+{
+	"name": "Asbestos", "stationCode": "QC/s0000682"
+},
+{
+	"name": "Suffield", "stationCode": "AB/s0000683"
+},
+{
+	"name": "Stony Rapids", "stationCode": "SK/s0000684"
+},
+{
+	"name": "Quispamsis", "stationCode": "NB/s0000685"
+},
+{
+	"name": "Sussex", "stationCode": "NB/s0000686"
+},
+{
+	"name": "Saint John", "stationCode": "NB/s0000687"
+},
+{
+	"name": "Fundy (National Park)", "stationCode": "NB/s0000688"
+},
+{
+	"name": "Sanikiluaq", "stationCode": "NU/s0000689"
+},
+{
+	"name": "Fort Smith", "stationCode": "NT/s0000690"
+},
+{
+	"name": "St. Catharines", "stationCode": "ON/s0000691"
+},
+{
+	"name": "Niagara Falls", "stationCode": "ON/s0000692"
+},
+{
+	"name": "Nanisivik", "stationCode": "NU/s0000693"
+},
+{
+	"name": "Kinngait", "stationCode": "NU/s0000694"
+},
+{
+	"name": "Thompson", "stationCode": "MB/s0000695"
+},
+{
+	"name": "Sachigo Lake", "stationCode": "ON/s0000696"
+},
+{
+	"name": "Big Trout Lake", "stationCode": "ON/s0000697"
+},
+{
+	"name": "Wunnummin Lake", "stationCode": "ON/s0000698"
+},
+{
+	"name": "Tasiujaq", "stationCode": "QC/s0000699"
+},
+{
+	"name": "Stirling", "stationCode": "ON/s0000700"
+},
+{
+	"name": "Trenton", "stationCode": "ON/s0000701"
+},
+{
+	"name": "Prince Edward (Picton)", "stationCode": "ON/s0000702"
+},
+{
+	"name": "Belleville", "stationCode": "ON/s0000703"
+},
+{
+	"name": "Quinte West", "stationCode": "ON/s0000704"
+},
+{
+	"name": "Timmins", "stationCode": "ON/s0000705"
+},
+{
+	"name": "Cochrane", "stationCode": "ON/s0000706"
+},
+{
+	"name": "Oshawa", "stationCode": "ON/s0000707"
+},
+{
+	"name": "Whitby", "stationCode": "ON/s0000708"
+},
+{
+	"name": "Shawinigan", "stationCode": "QC/s0000709"
+},
+{
+	"name": "Pickering", "stationCode": "ON/s0000710"
+},
+{
+	"name": "Puvirnituq", "stationCode": "QC/s0000711"
+},
+{
+	"name": "Laval", "stationCode": "QC/s0000712"
+},
+{
+	"name": "Naujaat", "stationCode": "NU/s0000713"
+},
+{
+	"name": "Sanirajak", "stationCode": "NU/s0000714"
+},
+{
+	"name": "La Ronge", "stationCode": "SK/s0000715"
+},
+{
+	"name": "Qikiqtarjuaq", "stationCode": "NU/s0000716"
+},
+{
+	"name": "Val-d'Or", "stationCode": "QC/s0000717"
+},
+{
+	"name": "Amos", "stationCode": "QC/s0000718"
+},
+{
+	"name": "Kuujjuaq", "stationCode": "QC/s0000719"
+},
+{
+	"name": "Norman Wells", "stationCode": "NT/s0000720"
+},
+{
+	"name": "Joliette", "stationCode": "QC/s0000721"
+},
+{
+	"name": "La Loche", "stationCode": "SK/s0000722"
+},
+{
+	"name": "Buffalo Narrows", "stationCode": "SK/s0000723"
+},
+{
+	"name": "Wiarton", "stationCode": "ON/s0000724"
+},
+{
+	"name": "Port Elgin", "stationCode": "ON/s0000725"
+},
+{
+	"name": "Saugeen Shores", "stationCode": "ON/s0000726"
+},
+{
+	"name": "South Bruce Peninsula", "stationCode": "ON/s0000727"
+},
+{
+	"name": "Owen Sound", "stationCode": "ON/s0000728"
+},
+{
+	"name": "Petawawa", "stationCode": "ON/s0000729"
+},
+{
+	"name": "Pembroke", "stationCode": "ON/s0000730"
+},
+{
+	"name": "Renfrew", "stationCode": "ON/s0000731"
+},
+{
+	"name": "Deep River", "stationCode": "ON/s0000732"
+},
+{
+	"name": "Moosomin", "stationCode": "SK/s0000733"
+},
+{
+	"name": "Richer", "stationCode": "MB/s0000734"
+},
+{
+	"name": "Victoria Harbour", "stationCode": "BC/s0000735"
+},
+{
+	"name": "Wabush Lake", "stationCode": "NL/s0000736"
+},
+{
+	"name": "Labrador City", "stationCode": "NL/s0000737"
+},
+{
+	"name": "Fermont", "stationCode": "QC/s0000738"
+},
+{
+	"name": "Williams Lake", "stationCode": "BC/s0000739"
+},
+{
+	"name": "Wrigley", "stationCode": "NT/s0000740"
+},
+{
+	"name": "Cranbrook", "stationCode": "BC/s0000741"
+},
+{
+	"name": "Saint-Timothée", "stationCode": "QC/s0000742"
+},
+{
+	"name": "Rosthern", "stationCode": "SK/s0000743"
+},
+{
+	"name": "Lambton Shores", "stationCode": "ON/s0000744"
+},
+{
+	"name": "Medicine Hat", "stationCode": "AB/s0000745"
+},
+{
+	"name": "Fort St. John", "stationCode": "BC/s0000746"
+},
+{
+	"name": "Savant Lake", "stationCode": "ON/s0000747"
+},
+{
+	"name": "Sioux Lookout", "stationCode": "ON/s0000748"
+},
+{
+	"name": "Whale Cove", "stationCode": "NU/s0000749"
+},
+{
+	"name": "Pangnirtung", "stationCode": "NU/s0000750"
+},
+{
+	"name": "Beaver Creek", "stationCode": "YT/s0000751"
+},
+{
+	"name": "Earlton", "stationCode": "ON/s0000752"
+},
+{
+	"name": "Temiskaming Shores", "stationCode": "ON/s0000753"
+},
+{
+	"name": "Vanderhoof", "stationCode": "BC/s0000754"
+},
+{
+	"name": "Repentigny", "stationCode": "QC/s0000755"
+},
+{
+	"name": "Kitimat", "stationCode": "BC/s0000756"
+},
+{
+	"name": "Terrace", "stationCode": "BC/s0000757"
+},
+{
+	"name": "Abbotsford", "stationCode": "BC/s0000758"
+},
+{
+	"name": "Paulatuk", "stationCode": "NT/s0000759"
+},
+{
+	"name": "Carcross", "stationCode": "YT/s0000760"
+},
+{
+	"name": "Wawa", "stationCode": "ON/s0000761"
+},
+{
+	"name": "Montreal River Harbour", "stationCode": "ON/s0000762"
+},
+{
+	"name": "Lake Superior (Provincial Park)", "stationCode": "ON/s0000763"
+},
+{
+	"name": "White River", "stationCode": "ON/s0000764"
+},
+{
+	"name": "North Bay", "stationCode": "ON/s0000765"
+},
+{
+	"name": "West Nipissing", "stationCode": "ON/s0000766"
+},
+{
+	"name": "Okotoks", "stationCode": "AB/s0000767"
+},
+{
+	"name": "Airdrie", "stationCode": "AB/s0000768"
+},
+{
+	"name": "Delson", "stationCode": "QC/s0000769"
+},
+{
+	"name": "Smithers", "stationCode": "BC/s0000770"
+},
+{
+	"name": "Fort Nelson", "stationCode": "BC/s0000771"
+},
+{
+	"name": "Penticton", "stationCode": "BC/s0000772"
+},
+{
+	"name": "Richmond Hill", "stationCode": "ON/s0000773"
+},
+{
+	"name": "Taloyoak", "stationCode": "NU/s0000774"
+},
+{
+	"name": "Victoria", "stationCode": "BC/s0000775"
+},
+{
+	"name": "Leaf Rapids", "stationCode": "MB/s0000776"
+},
+{
+	"name": "Lynn Lake", "stationCode": "MB/s0000777"
+},
+{
+	"name": "Brochet", "stationCode": "MB/s0000778"
+},
+{
+	"name": "Churchill", "stationCode": "MB/s0000779"
+},
+{
+	"name": "Happy Valley-Goose Bay", "stationCode": "NL/s0000780"
+},
+{
+	"name": "Grande Cache", "stationCode": "AB/s0000781"
+},
+{
+	"name": "Kapuskasing", "stationCode": "ON/s0000782"
+},
+{
+	"name": "Mont-Joli", "stationCode": "QC/s0000783"
+},
+{
+	"name": "Matane", "stationCode": "QC/s0000784"
+},
+{
+	"name": "Toronto Island", "stationCode": "ON/s0000785"
+},
+{
+	"name": "Mississauga", "stationCode": "ON/s0000786"
+},
+{
+	"name": "Caledon", "stationCode": "ON/s0000787"
+},
+{
+	"name": "Regina", "stationCode": "SK/s0000788"
+},
+{
+	"name": "Halton Hills", "stationCode": "ON/s0000789"
+},
+{
+	"name": "Gore Bay", "stationCode": "ON/s0000790"
+},
+{
+	"name": "Detah", "stationCode": "NT/s0000791"
+},
+{
+	"name": "Victoria (Hartland)", "stationCode": "BC/s0000792"
+},
+{
+	"name": "Salluit", "stationCode": "QC/s0000793"
+},
+{
+	"name": "Slave Lake", "stationCode": "AB/s0000794"
+},
+{
+	"name": "Sandspit", "stationCode": "BC/s0000795"
+},
+{
+	"name": "Sarnia", "stationCode": "ON/s0000796"
+},
+{
+	"name": "Saskatoon", "stationCode": "SK/s0000797"
+},
+{
+	"name": "Coral Harbour", "stationCode": "NU/s0000798"
+},
+{
+	"name": "Port Hardy", "stationCode": "BC/s0000799"
+},
+{
+	"name": "Sept-Îles", "stationCode": "QC/s0000800"
+},
+{
+	"name": "Port-Cartier", "stationCode": "QC/s0000801"
+},
+{
+	"name": "Annapolis Royal", "stationCode": "NS/s0000802"
+},
+{
+	"name": "Greenwood", "stationCode": "NS/s0000803"
+},
+{
+	"name": "Bridgetown", "stationCode": "NS/s0000804"
+},
+{
+	"name": "Mackenzie", "stationCode": "BC/s0000805"
+},
+{
+	"name": "Bathurst", "stationCode": "NB/s0000806"
+},
+{
+	"name": "Campbellton", "stationCode": "NB/s0000807"
+},
+{
+	"name": "Dalhousie", "stationCode": "NB/s0000808"
+},
+{
+	"name": "Charlo", "stationCode": "NB/s0000809"
+},
+{
+	"name": "Pointe-à-la-Croix", "stationCode": "QC/s0000810"
+},
+{
+	"name": "Carleton-sur-Mer", "stationCode": "QC/s0000811"
+},
+{
+	"name": "Tatamagouche", "stationCode": "NS/s0000812"
+},
+{
+	"name": "Truro", "stationCode": "NS/s0000813"
+},
+{
+	"name": "Economy", "stationCode": "NS/s0000814"
+},
+{
+	"name": "Orangeville", "stationCode": "ON/s0000815"
+},
+{
+	"name": "Fort McPherson", "stationCode": "NT/s0000816"
+},
+{
+	"name": "Tulita", "stationCode": "NT/s0000817"
+},
+{
+	"name": "Fort Good Hope", "stationCode": "NT/s0000818"
+},
+{
+	"name": "Ignace", "stationCode": "ON/s0000819"
+},
+{
+	"name": "Gjoa Haven", "stationCode": "NU/s0000820"
+},
+{
+	"name": "Alert", "stationCode": "NU/s0000821"
+},
+{
+	"name": "Moose Jaw", "stationCode": "SK/s0000822"
+},
+{
+	"name": "Old Crow", "stationCode": "YT/s0000823"
+},
+{
+	"name": "Pincher Creek", "stationCode": "AB/s0000824"
+},
+{
+	"name": "Whitehorse", "stationCode": "YT/s0000825"
+},
+{
+	"name": "Sandy Lake", "stationCode": "ON/s0000826"
+},
+{
+	"name": "St. Peters Bay", "stationCode": "PE/s0000827"
+},
+{
+	"name": "Stewart", "stationCode": "BC/s0000828"
+},
+{
+	"name": "Stettler", "stationCode": "AB/s0000829"
+},
+{
+	"name": "Tuktoyaktuk", "stationCode": "NT/s0000830"
+},
+{
+	"name": "Delta", "stationCode": "MB/s0000831"
+},
+{
+	"name": "Churchill Falls", "stationCode": "NL/s0000832"
+},
+{
+	"name": "Wainwright", "stationCode": "AB/s0000833"
+},
+{
+	"name": "Bella Bella", "stationCode": "BC/s0000834"
+},
+{
+	"name": "Lloydminster", "stationCode": "SK/s0000835"
+},
+{
+	"name": "Sudbury (Greater)", "stationCode": "ON/s0000843"
+},
+{
+	"name": "Cummins Lakes (Provincial Park)", "stationCode": "BC/s0000845"
+},
+{
+	"name": "Coquihalla Highway - Hope to Merritt", "stationCode": "BC/s0000846"
+},
+{
+	"name": "Coquihalla Highway - Merritt to Kamloops", "stationCode": "BC/s0000847"
+},
+{
+	"name": "Highway 3 - Hope to Princeton via Allison Pass", "stationCode": "BC/s0000849"
+},
+{
+	"name": "Highway 3 - Paulson Summit to Kootenay Pass", "stationCode": "BC/s0000850"
+},
+{
+	"name": "Highway 97 - Clinton to 100 Mile House via Begbie Summit", "stationCode": "BC/s0000851"
+},
+{
+	"name": "Highway 97 - Pine Pass", "stationCode": "BC/s0000852"
+},
+{
+	"name": "Okanagan Connector - Merritt to Kelowna", "stationCode": "BC/s0000853"
+},
+{
+	"name": "Sea to Sky - Squamish to Whistler", "stationCode": "BC/s0000854"
+},
+{
+	"name": "Trans-Canada Highway - Eagle Pass to Rogers Pass", "stationCode": "BC/s0000856"
+},
+{
+	"name": "L'Anse-au-Loup", "stationCode": "NL/s0000857"
+},
+{
+	"name": "Rigolet", "stationCode": "NL/s0000858"
+},
+{
+	"name": "Cartwright Junction", "stationCode": "NL/s0000859"
+},
+{
+	"name": "Gull Island Rapids", "stationCode": "NL/s0000860"
+},
+{
+	"name": "Eskasoni", "stationCode": "NS/s0000861"
+},
+{
+	"name": "Richmond", "stationCode": "BC/s0000862"
+},
+{
+	"name": "Duncan", "stationCode": "BC/s0000863"
+},
+{
+	"name": "Qualicum Beach", "stationCode": "BC/s0000864"
+},
+{
+	"name": "West Vancouver", "stationCode": "BC/s0000865"
+},
+{
+	"name": "Langley", "stationCode": "BC/s0000866"
+},
+{
+	"name": "Yellowhead Highway", "stationCode": "BC/s0000867"
+},
+{
+	"name": "Malahat Highway", "stationCode": "BC/s0000868"
+}];
