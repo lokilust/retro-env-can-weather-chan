@@ -345,13 +345,16 @@ yarn_site='https://dl.yarnpkg.com/debian'
 yarn_key_url="$yarn_site/pubkey.gpg"
 local_yarn_key="$keyring/yarnkey.gpg"
 
-print_status """Run \`${bold}sudo apt-get install -y ${NODEPKG}${normal}\` to install ${NODENAME} and npm
-## You may also need development tools to build native addons:
-     sudo apt-get install gcc g++ make
-## To install the Yarn package manager, run:
+exec_cmd 'sudo apt-get install -y nodejs'
+
+## Installing development tools to build native addons:
+exec_cmd 'sudo apt-get install gcc g++ make'
+
+## Installing the Yarn package manager,
+exec_cmd '
      curl -sL $yarn_key_url | gpg --dearmor | sudo tee $local_yarn_key >/dev/null
      echo \"deb [signed-by=$local_yarn_key] $yarn_site stable main\" | sudo tee /etc/apt/sources.list.d/yarn.list
-     sudo apt-get update && sudo apt-get install yarn
+     sudo apt-get update && sudo apt-get install yarn'
 """
 
 }
