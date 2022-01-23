@@ -40,7 +40,7 @@ If you don't want to continue press Ctrl-C to abort."
 #To compile and install native addons from npm you may also need to install build tools:
     
 ## use `sudo` on Ubuntu or run this as root on debian
-##sudo apt-get install -y build-essential
+sudo apt-get install -y build-essential
 
     echo -e "${green}\nInstall is complete.${normal}"
     echo -e "${cyan}Have fun building${normal}"
