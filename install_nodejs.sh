@@ -16,7 +16,7 @@ cyan=$(tput setaf 6);
 #
 # Using Ubuntu
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-exec_cmd 'sudo apt-get install -y nodejs'
+sudo apt-get install -y nodejs
 
 ## Using Debian, as root
 #curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
@@ -40,8 +40,9 @@ If you don't want to continue press Ctrl-C to abort."
 #To compile and install native addons from npm you may also need to install build tools:
     
 ## use `sudo` on Ubuntu or run this as root on debian
-exec_cmd "sudo apt-get install -y build-essential"
+sudo apt-get install -y build-essential
 
     echo -e "${green}\nInstall is complete.${normal}"
     echo -e "${cyan}Have fun building${normal}"
+    
 exit
