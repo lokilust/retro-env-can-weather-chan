@@ -351,10 +351,7 @@ exec_cmd 'sudo apt-get install -y nodejs'
 exec_cmd 'sudo apt-get install gcc g++ make'
 
 ## Installing the Yarn package manager,
-exec_cmd 'curl -sL $yarn_key_url | gpg --dearmor | sudo tee $local_yarn_key >/dev/null'
-     echo \"deb [signed-by=$local_yarn_key] $yarn_site stable main\" | sudo tee /etc/apt/sources.list.d/yarn.list
-     exec_cmd 'sudo apt-get update && sudo apt-get install yarn'
-}
+exec_cmd 'sudo apt-get update && sudo apt-get install yarn'
 
 ## Defer setup until we have the complete script
 setup
