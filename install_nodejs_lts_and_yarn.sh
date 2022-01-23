@@ -352,6 +352,7 @@ exec_cmd 'sudo apt-get install gcc g++ make'
 
 ## Installing the Yarn package manager,
 exec_cmd 'sudo apt-get update && sudo apt-get install yarn'
+{
 
 ## Defer setup until we have the complete script
 setup
