@@ -22,6 +22,14 @@ sudo apt-get install -y nodejs
 #curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 #apt-get install -y nodejs
 
+## Import the repository’s GPG key and add the Yarn APT repository to your system
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+## enabled, update the package list, and install Yarn
+sudo apt update
+sudo apt install yarn
+
     echo "${green}================================================================================${normal}"
     echo -e "${normal}\nInstall of node and Yarn package manager is complete.${normal}"
     echo "${green}================================================================================${normal}"
