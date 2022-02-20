@@ -40,7 +40,7 @@ To run this project you will need an internet connection and (at least) [Node v1
 NPM will be installed along with Node however I recommend using [Yarn](https://yarnpkg.com/) for this project.
 
 Before continuing along with this guide make sure you run the following to install the project dependencies.
-
+If you do not have it installed, Take a look at the install file /install_nodejs.sh
 ```
 yarn install
 ```
