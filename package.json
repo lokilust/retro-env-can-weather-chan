@@ -33,7 +33,7 @@
     "eslint-plugin-vue": "^7.20.0",
     "jsdom": "^19.0.0",
     "sass": "^1.49.8",
-    "sass-loader": "^8.0.0",
+    "sass-loader": "^13.0.2",
     "vue-jest": "^5.0.0-alpha.10",
     "webpack": "^5.69.1"
   },
